@@ -1,0 +1,84 @@
+{
+  "Name": "presearch test",
+  "CreationDate": "2021-9-17",
+  "Commands": [
+    {
+      "Command": "csvReadArray",
+      "Target": "searchterms.csv",
+      "Value": "searchterms",
+      "Description": ""
+    },
+    {
+      "Command": "echo",
+      "Target": "${searchterms.length}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "store",
+      "Target": "0",
+      "Value": "i",
+      "Description": ""
+    },
+    {
+      "Command": "forEach",
+      "Target": "searchterms",
+      "Value": "term",
+      "Description": ""
+    },
+    {
+      "Command": "echo",
+      "Target": "${term}",
+      "Value": "green",
+      "Description": ""
+    },
+    {
+      "Command": "type",
+      "Target": "xpath=//div/input",
+      "Value": "${term}",
+      "Targets": [
+        "id=search",
+        "name=term",
+        "xpath=//*[@id=\"search\"]",
+        "xpath=//input[@id='search']",
+        "xpath=//div/input",
+        "css=#search"
+      ],
+      "Description": ""
+    },
+    {
+      "Command": "sendKeys",
+      "Target": "xpath=//div/input",
+      "Value": "${KEY_ENTER}",
+      "Targets": [
+        "xpath=/html/body/div/div[2]/div[3]/div/div/div/div/form/div/button/svg",
+        "css=body > div > div.relative.flex.bg-white.dark:bg-dark-800 > div.flex.flex-col.flex-auto.w-full.min-h-screen > div:nth-child(1) > div > div.flex.items-center.h-12.max-w-2xl.pr-2.ml-1.sm:ml-0.relative > div > form > div > button > svg"
+      ],
+      "Description": ""
+    },
+    {
+      "Command": "pause",
+      "Target": "2400000",
+      "Value": "2400000",
+      "Description": "40 minute pause"
+    },
+    {
+      "Command": "",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "end",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "",
+      "Target": "",
+      "Value": "",
+      "Description": ""
+    }
+  ]
+}
