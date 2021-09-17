@@ -1,7 +1,10 @@
 # presearchbot
 
-Use with the UI vision pluging in Chrome.
+Runs tests on the Presearch search engine.
 
-https://ui.vision/
+### Installation:
+
+Use with the UI vision plugin in Chrome: https://ui.vision/
 
 Create a new macro, then paste the json into "Source View (JSON)"
+
