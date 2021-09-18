@@ -3,21 +3,51 @@
   "CreationDate": "2021-9-17",
   "Commands": [
     {
-      "Command": "csvReadArray",
-      "Target": "searchterms.csv",
+      "Command": "open",
+      "Target": "https://lxwang.github.io/presearchbot/searchterms.html",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript",
+      "Target": "return window.document.getElementsByName('searchterms')[0].value;",
+      "Value": "searchterms_str",
+      "Description": ""
+    },
+    {
+      "Command": "echo",
+      "Target": "${searchterms_str}",
+      "Value": "",
+      "Description": ""
+    },
+    {
+      "Command": "executeScript_Sandbox",
+      "Target": "var txt = ${searchterms_str};\nreturn txt.trim().split(/\\r?\\n/);",
+      "Value": "searchterms",
+      "Description": ""
+    },
+    {
+      "Command": "comment",
+      "Target": "csvReadArray // searchterms.csv",
       "Value": "searchterms",
       "Description": ""
     },
     {
       "Command": "echo",
       "Target": "${searchterms.length}",
-      "Value": "",
+      "Value": "green",
       "Description": ""
     },
     {
       "Command": "store",
       "Target": "0",
       "Value": "i",
+      "Description": ""
+    },
+    {
+      "Command": "open",
+      "Target": "https://engine.presearch.org/search?q=test",
+      "Value": "",
       "Description": ""
     },
     {
@@ -70,12 +100,6 @@
     },
     {
       "Command": "end",
-      "Target": "",
-      "Value": "",
-      "Description": ""
-    },
-    {
-      "Command": "",
       "Target": "",
       "Value": "",
       "Description": ""
